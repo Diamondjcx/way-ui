@@ -1,0 +1,51 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+@include w(tree-node) {
+    white-space: nowrap;
+    @include w(checkbox) {
+        margin-right: 0;
+    }
+    @include w(tree-node_content) {
+        display: flex;
+        align-items: center;
+        height: 26px;
+        cursor: pointer;
+        @include w(tree-node__expand-icon) {
+            cursor: pointer;
+            color: #c0c4cc;
+            font-size: 12px;
+            transform: rotate(0deg);
+            transition: transform .3s ease-in-out;
+            &::before {   
+                display: inline-block;
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid #c0c4cc;
+                margin-right: 6px;
+            }
+        }
+        @include w(tree-node__expand-icon)  {
+            &.is-leaf {
+                cursor: default;
+                &::before {
+                    border-left: 5px solid transparent;
+                }
+            }
+            &.expanded {
+                transform: rotate(90deg);
+                margin: 5px 5px 0 0;
+            }
+            &.is-leaf {
+                color: transparent;
+                cursor: default;
+            }
+            
+        }
+    }
+    
+}
+  

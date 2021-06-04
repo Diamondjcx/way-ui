@@ -1,0 +1,72 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+@include w(pagination) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 30px;
+  .p-total, button,li{
+    margin: 0 3px;
+  }
+  button {
+    background: none;
+    border: none;
+    margin-right: 5px;
+    user-select: none;
+    outline: none;
+    font-size: 18px;
+    tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: transparent;
+    &[disabled] {
+      color: $--color-disable;
+      cursor: not-allowed;
+      &:hover {
+        color: $--color-disable;
+      }
+    }
+  }
+  button, li {
+    height: 30px;
+    min-width: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+    transition: all ease .1s;
+    &:hover {
+      color: $--color-primary;
+    }
+  }
+  ul, li {
+    list-style: none;
+  }
+  ul {
+    display: flex;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    &.active {
+      color: $--color-primary;
+    }
+    &.btn-more {
+      .chevrons {
+        display: none;
+      }
+      .more {
+        display: block;
+      }
+      &:hover {
+        .chevrons {
+          display: block;
+          color: $--color-primary;
+        }
+        .more {
+          display: none;
+        }
+      }
+    }
+  }
+}

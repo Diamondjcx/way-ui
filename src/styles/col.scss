@@ -1,0 +1,13 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+[class*="w-col-"] {
+  box-sizing: border-box;
+}
+
+@for $i from 0 through 24 {
+  .w-col-#{$i} {
+    width: (1 / 24 * $i * 100) * 1%;
+    flex: 0 0 (1 / 24 * $i * 100) * 1%;
+  }
+}

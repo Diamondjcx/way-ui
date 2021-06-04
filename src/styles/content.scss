@@ -1,0 +1,10 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+@include w(content) {
+    display: block;
+    flex: 1;
+    flex-basis: auto;
+    padding: 20px;
+}
+  

@@ -1,0 +1,123 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+@include w(checkbox) {
+  position: relative;
+  color: #606266;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  outline: none;
+  line-height: 1;
+  user-select: none;
+  margin-right: 20px;
+  @include when(checked) {
+    .w-checkbox-item {
+      .w-checkbox-inner {
+        border-color: $--color-primary;
+        background: $--color-primary;
+        &:before {
+          position: absolute;
+          box-sizing: content-box;
+          content: "";
+          border: 2px solid $--color-white;
+          border-left: 0;
+          border-top: 0;
+          height: 8px;
+          width: 3px;
+          top: 1px;
+          left: 4px;
+          transition: all .15s ease-in .05s;
+          transform-origin: center;
+          transform: rotate(45deg) scaleY(1);
+        }
+      }
+      .w-checkbox-label {
+        color: $--color-primary;
+      }
+    }
+  }
+  @include when(disabled) {
+    .w-checkbox-item {
+      cursor: not-allowed;
+      .w-checkbox-inner {
+        cursor: not-allowed;
+        border-color: $--color-disable !important;
+        background: $--color-disable-bg !important;
+        &:before {
+          border-color: $--color-disable !important;
+        }
+      }
+    }
+    .w-checkbox-label {
+      color: $--color-disable !important;
+    }
+  }
+  @include when(indeterminate) {
+    .w-checkbox-item {
+      .w-checkbox-inner {
+        border-color: $--color-primary;
+        background: $--color-primary;
+        &:before {
+          position: absolute;
+          box-sizing: content-box;
+          content: "";
+          border: 0 solid $--color-white;
+          border-right-width: 2px;
+          height: 8px;
+          width: 3px;
+          top: 1px;
+          left: 4px;
+          transition: all .15s ease-in .05s;
+          transform-origin: center;
+          transform: rotate(90deg) scaleY(1);
+        }
+      }
+      .w-checkbox-label {
+        color: $--color-primary;
+      }
+    }
+  }
+  .w-checkbox-item {
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .w-checkbox-label {
+    padding-left: 6px;
+    transition: all ease .2s;
+  }
+  .w-checkbox-input {
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    .w-checkbox-inner {
+      position: relative;
+      margin-top: -1px;
+      border: 1px solid $--color-text-secondary;
+      width: 15px;
+      height: 15px;
+      background-color: $--color-white;
+      display: inline-block;
+      vertical-align: top;
+      transition: all ease .2s;
+      border-radius: 3px;
+    }
+    .w-checkbox-original {
+      opacity: 0;
+      outline: none;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+    }
+  }
+}

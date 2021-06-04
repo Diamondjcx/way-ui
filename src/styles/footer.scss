@@ -1,0 +1,8 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+@include w(footer) {
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+  

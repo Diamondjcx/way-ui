@@ -1,0 +1,83 @@
+html {
+  width: 100%;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  background: #fff;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 15px 0;
+  line-height: 2;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.title {
+  margin-top: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+#app {
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.sidenav-main {
+  position: fixed;
+  width: 220px;
+  height: calc(100vh);
+  padding: 20px;
+  background: #f8f9fa;
+  overflow-x: scroll;
+  z-index: 1000;
+  h2 {
+    margin-top: 0;
+  }
+  a {
+    padding: 5px 0;
+    display: inline-block;
+    font-weight: 400;
+    color: #2c3e50;
+    &.router-link-exact-active {
+      color: #00bdff;
+    }
+  }
+}
+
+#main {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 20px 20px 240px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all ease-out .2s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+  opacity: 0;
+  transform: translateY(10px);
+}

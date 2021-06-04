@@ -1,0 +1,128 @@
+@import "config";
+@import "../common/index";
+/**
+ * 元素命名
+ */
+@mixin w($name) {
+  $W: $namespace+'-'+$name !global;
+  .#{$W} {
+    @content;
+  }
+}
+/**
+ * 元素命名
+ */
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+/**
+ * 元素命名
+ */
+@mixin in($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $im-separator + $unit + ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+/**
+ * 元素状态命名
+ */
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+
+/**
+ * 按钮元素
+ */
+@mixin button-variant($color, $background-color, $border-color) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+
+  &:hover,
+  &:focus {
+    background: mix($--color-white, $background-color, $--button-hover-tint-percent);
+    border-color: mix($--color-white, $border-color, $--button-hover-tint-percent);
+    color: $color;
+  }
+
+  &:active {
+    background: mix($--color-black, $background-color, $--button-active-shade-percent);
+    border-color: mix($--color-black, $border-color, $--button-active-shade-percent);
+    color: $color;
+    outline: none;
+  }
+
+  &.is-active {
+    background: mix($--color-black, $background-color, $--button-active-shade-percent);
+    border-color: mix($--color-black, $border-color, $--button-active-shade-percent);
+    color: $color;
+  }
+}
+/**
+ * 按钮大小
+ */
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  border-radius: $border-radius;
+  &.is-round{
+    padding: $padding-vertical $padding-horizontal;
+  }
+}
+
+/**
+ * box 阴影
+ */
+@mixin boxShadow(){
+
+}
+
+/*
+* tag元素
+*/
+@mixin tag-variant($color, $background-color, $border-color) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+}
+//tag大小
+@mixin tag-size($height, $line-height, $padding-vertical, $padding-horizontal) {
+  height: $height;
+  line-height: $line-height;
+  padding: $padding-vertical, $padding-horizontal;
+}
+
+// link type
+@mixin link-type($color, $hover-color, $disabled-color) {
+  color: $color;
+  &:hover {
+      color: $hover-color;
+  }
+  &.is-disabled {
+      color: $disabled-color;
+  } 
+}

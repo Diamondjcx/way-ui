@@ -1,0 +1,31 @@
+@import 'mixins/mixin';
+@import "common/index";
+@import "common/animation";
+
+@include w(loading) {
+  position: relative;
+  display: inline-block;
+  @include when(fullscreen){
+    position: fixed;
+  }
+  @include in(inner){
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index: 1;
+    background: rgba(255,255,255,.82);
+    color:$--color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  @include in(icon){
+    font-size:1rem;
+    font-weight: bold;
+    animation: infinite-rotate infinite linear 1.2s;
+    line-height: 1;
+  }
+}

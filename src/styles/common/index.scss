@@ -1,0 +1,189 @@
+/*
+ *Colors
+ */
+
+$--color-white: #fff !default;
+$--color-black: #000 !default;
+$--color-primary: #5673ff !default;
+
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default;
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default;
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default;
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default;
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default;
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default;
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default;
+$--color-primary-light-95: mix($--color-white, $--color-primary, 95%) !default;
+
+$--color-black-light-1: mix($--color-white, $--color-black, 10%) !default;
+$--color-black-light-2: mix($--color-white, $--color-black, 20%) !default;
+$--color-black-light-3: mix($--color-white, $--color-black, 30%) !default;
+$--color-black-light-4: mix($--color-white, $--color-black, 40%) !default;
+$--color-black-light-5: mix($--color-white, $--color-black, 50%) !default;
+$--color-black-light-6: mix($--color-white, $--color-black, 60%) !default;
+$--color-black-light-7: mix($--color-white, $--color-black, 70%) !default;
+$--color-black-light-8: mix($--color-white, $--color-black, 80%) !default;
+$--color-black-light-9: mix($--color-white, $--color-black, 90%) !default;
+$--color-black-light-95: mix($--color-white, $--color-black, 95%) !default;
+$--color-black-light-98: mix($--color-white, $--color-black, 98%) !default;
+
+$--color-success: #05caae !default;
+$--color-success-light-1: mix($--color-white, $--color-success, 10%) !default;
+$--color-success-light-2: mix($--color-white, $--color-success, 20%) !default;
+$--color-success-light-3: mix($--color-white, $--color-success, 30%) !default;
+$--color-success-light-4: mix($--color-white, $--color-success, 40%) !default;
+$--color-success-light-5: mix($--color-white, $--color-success, 50%) !default;
+$--color-success-light-6: mix($--color-white, $--color-success, 60%) !default;
+$--color-success-light-7: mix($--color-white, $--color-success, 70%) !default;
+$--color-success-light-8: mix($--color-white, $--color-success, 80%) !default;
+$--color-success-light-9: mix($--color-white, $--color-success, 90%) !default;
+
+$--color-danger: #ff8282 !default;
+$--color-danger-light-1: mix($--color-white, $--color-danger, 10%) !default;
+$--color-danger-light-2: mix($--color-white, $--color-danger, 20%) !default;
+$--color-danger-light-3: mix($--color-white, $--color-danger, 30%) !default;
+$--color-danger-light-4: mix($--color-white, $--color-danger, 40%) !default;
+$--color-danger-light-5: mix($--color-white, $--color-danger, 50%) !default;
+$--color-danger-light-6: mix($--color-white, $--color-danger, 60%) !default;
+$--color-danger-light-7: mix($--color-white, $--color-danger, 70%) !default;
+$--color-danger-light-8: mix($--color-white, $--color-danger, 80%) !default;
+$--color-danger-light-9: mix($--color-white, $--color-danger, 90%) !default;
+
+$--color-warning: #ffaa2e !default;
+$--color-warning-light-1: mix($--color-white, $--color-warning, 10%) !default;
+$--color-warning-light-2: mix($--color-white, $--color-warning, 20%) !default;
+$--color-warning-light-3: mix($--color-white, $--color-warning, 30%) !default;
+$--color-warning-light-4: mix($--color-white, $--color-warning, 40%) !default;
+$--color-warning-light-5: mix($--color-white, $--color-warning, 50%) !default;
+$--color-warning-light-6: mix($--color-white, $--color-warning, 60%) !default;
+$--color-warning-light-7: mix($--color-white, $--color-warning, 70%) !default;
+$--color-warning-light-8: mix($--color-white, $--color-warning, 80%) !default;
+$--color-warning-light-9: mix($--color-white, $--color-warning, 90%) !default;
+
+$--color-disable: $--color-black-light-7 !default;
+$--color-disable-bg: $--color-black-light-95 !default;
+
+$--color-text-primary: #303753 !default;
+$--color-text-regular: #767E91 !default;
+$--color-text-secondary: #B3B9C7 !default;
+$--color-text-placeholder: $--color-white !default;
+
+/* Border
+-------------------------- */
+$--border-width-base: 1px !default;
+$--border-style-base: solid !default;
+$--border-color-base: #dfdfe0 !default;
+$--border-color-light: #e4e7ed !default;
+$--border-color-lighter: #ebeef5 !default;
+$--border-color-extra-light: #f2f6fc !default;
+$--border-color-hover: $--color-text-placeholder !default;
+$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+$--border-radius-base: 4px !default;
+$--border-radius-small: 2px !default;
+$--border-radius-circle: 100% !default;
+
+$--button-primary-border: $--color-primary !default;
+$--button-primary-color: $--color-white !default;
+$--button-primary-fill: $--color-primary !default;
+
+$--button-danger-border: $--color-danger !default;
+$--button-danger-color: $--color-white !default;
+$--button-danger-fill: $--color-danger !default;
+
+$--button-warning-border: $--color-warning !default;
+$--button-warning-color: $--color-white !default;
+$--button-warning-fill: $--color-warning !default;
+
+$--button-success-border: $--color-success !default;
+$--button-success-color: $--color-white !default;
+$--button-success-fill: $--color-success !default;
+
+$--button-hover-tint-percent: 20% !default;
+$--button-active-shade-percent: 10% !default;
+
+$--button-disabled-color: $--color-text-placeholder !important;
+$--button-disabled-fill: $--color-text-secondary !important;
+$--button-disabled-border: $--border-color-lighter !important;
+
+/// fontSize||Font|1
+$--button-small-font-size: 0.75rem !default;
+$--button-small-border-radius: #{$--border-radius-base - 1} !default;
+/// padding||Spacing|3
+$--button-small-padding-vertical: 6px !default;
+/// padding||Spacing|3
+$--button-small-padding-horizontal: 10px !default;
+
+/// fontSize||Font|1
+$--button-large-font-size: 1rem !default;
+$--button-large-border-radius: #{$--border-radius-base - 1} !default;
+/// padding||Spacing|3
+$--button-large-padding-vertical: 10px !default;
+/// padding||Spacing|3
+$--button-large-padding-horizontal: 22px !default;
+/// fontpath
+$--font-path: 'fonts' !default;
+
+// tag todo
+$--tag-info-border: #e9e9eb !default;
+$--tag-info-color: #909399 !default;
+$--tag-info-fill: #f4f4f5 !default;
+
+$--tag-danger-border:  #fde2e2 !default;
+$--tag-danger-color:  #f56c6c !default;
+$--tag-danger-fill: #fef0f0 !default;
+
+$--tag-warning-border: #faecd8 !default;
+$--tag-warning-color: #e6a23c !default;
+$--tag-warning-fill: #fdf6ec !default;
+
+$--tag-success-border: #e1f3d8 !default;
+$--tag-success-color: #67c23a !default;
+$--tag-success-fill: #f0f9eb !default;
+
+// size
+$--tag-medium-height: 28px;
+$--tag-medium-line-height: 26px;
+$--tag-medium-padding-vertical: 0;
+$--tag-medium-padding-horizontal: 0px;
+
+$--tag-small-height: 24px;
+$--tag-small-line-height: 22px;
+$--tag-small-padding-vertical: 0;
+$--tag-small-padding-horizontal: 8px;
+
+$--tag-mini-height: 20px;
+$--tag-mini-line-height: 19px;
+$--tag-mini-padding-vertical: 0;
+$--tag-mini-padding-horizontal: 5px;
+
+
+// Link
+$--link-default-font-color: #606266;
+$--link-default-hover-color: #409eff;
+$--link-default-disabled-color: #c0c4cc;
+
+$--link-primary-font-color: #409eff;
+$--link-primary-hover-color: #409eff;
+$--link-primary-disabled-color: #a0cfff;
+
+$--link-success-font-color: #67c23a;
+$--link-success-hover-color: #67c23a;
+$--link-success-disabled-color: #b3e19d;
+
+$--link-warning-font-color: #e6a23c;
+$--link-warning-hover-color: #e6a23c;
+$--link-warning-disabled-color: #f3d19e;
+
+$--link-danger-font-color: #f56c6c;
+$--link-danger-hover-color: #f56c6c;
+$--link-danger-disabled-color: #fab6b6;
+
+$--link-info-font-color: #909399;
+$--link-info-hover-color: #909399;
+$--link-info-disabled-color: #c8c9cc;
+
+// table
+$--table-border-color-base: #f3f3f8 !default;
+$--table-cell-hover-color: #f0f5fb !default;

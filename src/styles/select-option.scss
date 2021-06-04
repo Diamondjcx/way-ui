@@ -1,0 +1,57 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+@include w(select-option) {
+    position: absolute;
+    z-index: 1001;
+    border: 1px solid #e4e7ed;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    box-sizing: border-box;
+    margin: 5px 0;
+    .w-scrollbar {
+        overflow: hidden;
+        position: relative;
+        .w-scrollbar_wrap {
+            .w-select-option_list {
+                list-style: none;
+                padding: 6px 0;
+                margin: 0;
+                box-sizing: border-box;
+                .el-select-option_item{
+                    padding:8px 20px;
+                    cursor: pointer;
+                    user-select: none;
+                    transition: all ease .2s;
+                    &:hover{
+                      background: $--color-primary-light-9;
+                      color: $--color-primary;
+                    }
+                    &:active{
+                      background: $--color-primary-light-8;
+                    }
+                    @include when(disabled) {
+                      cursor: not-allowed;
+                      background: $--color-disable-bg;
+                      color: $--color-disable;
+                    }
+                    @include when(selected) {
+                      background: #fff;
+                      color: $--color-primary;
+                      .w-icon-check {
+                           position: absolute;
+                            right: 20px;
+                            font-family: element-icons;
+                            content: "\e6da";
+                            font-size: 12px;
+                            font-weight: 700;
+                            -webkit-font-smoothing: antialiased;
+                      }
+                    }
+                  }
+                  
+            }
+        }
+    }
+}

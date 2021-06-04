@@ -1,0 +1,50 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+@include w(link){
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    &:hover {
+        text-decoration-line: underline;
+    }
+    //无下划线 true
+    &.is-underline {
+        &:hover {
+            text-decoration-line: none;
+        }
+    }
+
+    @include m(default){
+        @include link-type($--link-default-font-color, $--link-default-hover-color, $--link-default-disabled-color);
+    }
+    @include m(primary){
+        @include link-type($--link-primary-font-color, $--link-primary-hover-color, $--link-primary-disabled-color);
+    }
+    @include m(success){
+        @include link-type($--link-success-font-color, $--link-success-hover-color, $--link-success-disabled-color);   
+    }
+    @include m(warning){
+        @include link-type($--link-warning-font-color, $--link-warning-hover-color, $--link-warning-disabled-color);
+    }
+    @include m(danger){
+        @include link-type($--link-danger-font-color, $--link-danger-hover-color, $--link-danger-disabled-color);
+    }
+    @include m(info){
+        @include link-type($--link-info-font-color, $--link-info-hover-color, $--link-info-disabled-color);
+    }
+    @include when(disabled) {
+        cursor: not-allowed;
+        text-decoration-line: none;
+    }
+    
+}

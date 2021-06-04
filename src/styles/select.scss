@@ -1,0 +1,86 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+
+@include w(select) {
+    display: inline-block;
+    position: relative;
+    @include w(tag) {
+        box-sizing: border-box;
+        margin: 2px 0 2px 6px;
+    }
+    @include w(select__tags) {
+        position: absolute;
+        line-height: normal;
+        white-space: normal;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+    }
+    @include w(select-input) {
+        width: 100%;
+    }
+    @include w(select-cheron) {
+        position: absolute;
+        top: 5px;
+        right: 6px;
+        display: block;
+        .w-icon-chevron-up:before {
+            content: "\e931";
+        }
+        .w-icon-chevrons-down:before {
+            content: "\e932";
+        }
+    }
+    @include w(select-clear) {
+        position: absolute;
+        top: 5px;
+        right: 6px;
+        display: none;
+        .w-icon-x-circle:before {
+            content: "\ea0f";
+        }
+    }
+    @include w(input-inner) {
+        cursor: pointer;
+    }
+    @include m(small) {
+        width: 150px;
+        @include w(input-inner) {
+            height: 30px;
+        }
+        @include w(select-cheron) {
+            position: absolute;
+            top: 6px;
+        }
+    }
+    @include m(large) {
+        width: 30%;
+        @include w(input-inner) {
+                height: 37px;
+                font-size: 16px;
+        }
+        @include w(select-cheron) {
+            position: absolute;
+            top: 5px;
+            right: 6px;
+            font-size: 16px;
+        }
+    }
+
+}
+// 可清除
+  @include w(select-suffix) {
+        &:hover {
+            @include w(select-cheron) {
+                display: none;
+            }
+            @include w(select-clear) {
+                display: block;
+            }
+        }
+  }

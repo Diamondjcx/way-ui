@@ -1,0 +1,59 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+@include w(tag){
+    background-color: #ecf5ff;
+    display: inline-block;
+    height: 32px;
+    padding: 0 10px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #409eff;
+    border: 1px solid #d9ecff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    @include w(tag-close) {
+        top: -1px;
+        right: -5px;
+        border-radius: 50%;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        font-size: 12px;
+        height: 16px;
+        width: 16px;
+        line-height: 16px;
+        vertical-align: middle;
+        top: -1px;
+        right: -5px;
+        &:before {
+            content: "\ea12";   
+        }
+        &:hover {
+            color: #fff;
+            background-color: #409eff;
+        }
+    }
+    @include m(info){
+        @include tag-variant($--tag-info-color, $--tag-info-fill, $--tag-info-border);
+    }
+    @include m(danger){
+        @include tag-variant($--tag-danger-color, $--tag-danger-fill, $--tag-danger-border);
+    }
+    @include m(warning){
+        @include tag-variant($--tag-warning-color, $--tag-warning-fill, $--tag-warning-border);
+    }
+    @include m(success){
+        @include tag-variant($--tag-success-color, $--tag-success-fill, $--tag-success-border);
+    }
+    @include m(medium) {
+        @include tag-size($--tag-medium-height, $--tag-medium-line-height, $--tag-medium-padding-vertical, $--tag-small-padding-horizontal);
+    }
+    @include m(small) {
+        @include tag-size($--tag-small-height, $--tag-small-line-height, $--tag-small-padding-vertical, $--tag-small-padding-horizontal);
+    }
+    @include m(mini) {
+        @include tag-size($--tag-mini-height, $--tag-mini-line-height, $--tag-mini-padding-vertical, $--tag-mini-padding-horizontal);
+    }
+}

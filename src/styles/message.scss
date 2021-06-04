@@ -1,0 +1,66 @@
+@import 'mixins/mixin';
+@import "common/index";
+.w-message {
+  z-index: 1010;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: auto;
+  max-width: 80%;
+  line-height: 1;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transform-origin: center center;
+  transition: top ease .5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $--color-primary-light-9;
+  border: 1px solid $--color-primary-light-8;
+  color: $--color-primary;
+  box-shadow: 0 2px 12px $--color-primary-light-9;
+  -webkit-box-shadow: 0 2px 12px $--color-primary-light-9;
+  @include when(success) {
+    background: $--color-success-light-9;
+    border: 1px solid $--color-success-light-8;
+    color: $--color-success;
+    box-shadow: 0 2px 12px $--color-success-light-9;
+    -webkit-box-shadow: 0 2px 12px $--color-success-light-9;
+  }
+  @include when(warning) {
+    background: $--color-warning-light-9;
+    border: 1px solid $--color-warning-light-8;
+    color: $--color-warning;
+    box-shadow: 0 2px 12px $--color-warning-light-9;
+    -webkit-box-shadow: 0 2px 12px $--color-warning-light-9;
+  }
+  @include when(error) {
+    background: $--color-danger-light-9;
+    border: 1px solid $--color-danger-light-8;
+    color: $--color-danger;
+    box-shadow: 0 2px 12px $--color-danger-light-9;
+    -webkit-box-shadow: 0 2px 12px $--color-danger-light-9;
+  }
+}
+
+/*w-message*/
+.w-massage-leave-active,
+.w-massage-enter-active {
+  transition: all ease .5s;
+}
+
+.w-massage-enter {
+  opacity: 0;
+  transform: translate(-50%,-50px);
+}
+
+.w-massage-leave-to {
+  opacity: 0;
+  transform: translate(-50%,-50px);
+}

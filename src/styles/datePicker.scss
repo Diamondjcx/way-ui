@@ -1,0 +1,289 @@
+@import 'mixins/mixin';
+@import "common/index";
+@include w(date){
+  @include w(date-input-wrap){
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid $--border-color-base;
+    background: $--color-white;
+    width: 200px;
+    line-height: 1;
+    transition:all ease .2s;
+    height: 34px;
+    padding:0 10px;
+    @include when(range){
+      width: 380px;
+      .date-input{
+        input{
+          text-align: center;
+        }
+      }
+    }
+    span{
+      flex: 0 0 auto;
+    }
+    .date-input{
+      width: 100%;
+      input{
+        padding:0;
+        flex: 1 1 50% ;
+        border: none !important;
+      }
+    }
+    &.is-focused{
+      border-color:$--color-primary;
+    }
+    &:hover{
+      .w-date-input-clear{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .w-date-input-clear{
+      position: absolute;
+      right: 0;
+      top:0;
+      padding:0 10px;
+      cursor: pointer;
+      color: $--color-black-light-8;
+      font-size:14px;
+      transition: all ease .2s;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      &:hover{
+        color: $--color-black-light-6;
+      }
+    }
+  }
+  @include w(date-range){
+    display: flex;
+    @include w(date-division){
+      position: relative;
+      width: 2px;
+      background: $--color-primary-light-9;
+    }
+  }
+  @include w(date-panel){
+    background: $--color-white;
+    position: relative;
+    box-sizing: border-box;
+    width: 300px;
+    padding:10px;
+    // 周 模块
+    @include w(date-week){
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      .week-item{
+        width: 40px;
+        height: 40px;
+        padding:5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+    }
+    // 日 模块
+    @include w(date-day){
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      .day-init{
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        box-sizing: border-box;
+        color: $--color-text-primary;
+        .day-item{
+          width: 100%;
+          height: 100%;
+          padding:5px;
+          transition: all ease .1s;
+          &:hover{
+            color: $--color-primary;
+            .day-num{
+              background: $--color-primary-light-9;
+            }
+          }
+          &.selected{
+            .day-num{
+              color:$--color-white !important;
+              background: $--color-primary !important;
+            }
+          }
+          &.otherMonth{
+            color: $--color-black-light-6;
+          }
+          &.today{
+            font-weight: bold;
+            color:$--color-primary;
+          }
+          &.in-range{
+            .day-num{
+              background: $--color-primary-light-9 ;
+            }
+          }
+          &.disabled{
+            cursor: not-allowed;
+            .day-num {
+              color: $--color-disable;
+              background: $--color-disable-bg;
+            }
+          }
+          .day-num{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    // 月模块
+    @include w(date-month){
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      height: 240px;
+      margin:20px 0;
+      .month-init{
+        text-align: center;
+        width: 33.33%;
+        padding:10px;
+        .month-span{
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:hover{
+            background: $--color-primary-light-9;
+          }
+          &.selected{
+            color: $--color-primary;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    // 日期时间编辑模块
+    @include w(date-edit){
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      input{
+        flex: 1 1 40px;
+        border: none;
+        -webkit-appearance: none;
+        outline:none;
+        border-radius: 3px;
+        font-size: 13px;
+        padding:2px;
+        width: 40px;
+        box-sizing: border-box;
+        text-align: center;
+        font-weight: 500;
+        &:active{
+          box-shadow: none;
+        }
+        &[name=date-year]{
+          width: 50px;
+        }
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button{
+          -webkit-appearance: none;
+        }
+        input[type="number"] {
+          -moz-appearance: textfield;
+        }
+      }
+      span{
+        flex: 0 0 auto;
+        color: $--color-black-light-6;
+      }
+      .edit-date,.edit-time{
+        position: relative;
+        overflow: hidden;
+        flex: 0 0 48%;
+        width: 50%;
+        border: 1px solid $--color-black-light-8;
+        display: flex;
+        border-radius: 3px;
+        line-height: 28px;
+      }
+    }
+    // 年月 选择模块
+    @include w(date-year-month){
+      padding-top:6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      line-height: 1;
+      .prev-control,.next-control{
+        display: flex;
+      }
+      .year-month{
+        font-size: 16px;
+        font-weight: bold;
+        span{
+          transition: all ease .2s;
+          cursor: pointer;
+          &:hover{
+            color: $--color-primary;
+          }
+        }
+      }
+      .item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 40px;
+        cursor: pointer;
+        font-size: 16px;
+        &:hover{
+          color: $--color-primary;
+        }
+      }
+    }
+  }
+  // 控制模块
+  @include w(date-complete){
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid $--color-black-light-9;
+    .complete-control{
+      .w-button{
+        margin:0 5px;
+      }
+    }
+    .complete-shortcuts{
+      span{
+        cursor: pointer;
+        transition: all ease .2s;
+        margin:0 5px;
+        &:hover{
+          color: $--color-primary;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,36 @@
+@import 'mixins/mixin';
+@import "common/index";
+@include w(dropdown){
+  position: relative;
+  display: inline-block;
+}
+
+@include w(dropdown-menu){
+  position: absolute;
+  padding-top:6px;
+  transform-origin: top center;
+  .w-dropdown-menu-main{
+    background: #fff;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px 1px $--color-primary-light-8;
+  }
+}
+@include w(dropdown-item){
+  padding:8px 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: all ease .2s;
+  &:hover{
+    background: $--color-primary-light-9;
+    color: $--color-primary;
+  }
+  &:active{
+    background: $--color-primary-light-8;
+  }
+  @include when(disabled) {
+    cursor: not-allowed;
+    background: $--color-disable-bg;
+    color: $--color-disable;
+  }
+}

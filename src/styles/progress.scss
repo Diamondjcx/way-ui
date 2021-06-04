@@ -1,0 +1,33 @@
+@import 'mixins/mixin';
+@import "common/index";
+
+@include w(progress) {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include in(outer) {
+    position: relative;
+    overflow: hidden;
+    height: 8px;
+    width: 100%;
+    flex: 1 1 100%;
+    background: $--color-black-light-9;
+    border-radius: 9999px;
+  }
+  @include in(inner) {
+    position: relative;
+    height: 100%;
+    width: 0;
+    background: $--color-primary;
+    transition: all ease .3s;
+  }
+  @include in(label) {
+    text-align: right;
+    width: auto;
+    flex: 0 0 auto;
+    margin-left:10px;
+  }
+}

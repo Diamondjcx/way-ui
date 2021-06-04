@@ -1,0 +1,62 @@
+@import 'mixins/mixin';
+@import "common/index";
+@include w(switch){
+  position: relative;
+  display: inline-block;
+  .w-switch-inner{
+    display: inline-block;
+    position: relative;
+    min-width: 40px;
+    height: 20px;
+    line-height: 16px;
+    background: #ccc;
+    border-radius: 11px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    vertical-align: middle;
+    transition:ease .2s;
+    padding:2px 3px 2px 21px;
+    user-select: none;
+    &:after{
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border-radius: 50%;
+      top:2px;
+      left:2px;
+      transition:ease .2s;
+    }
+    span{
+      transition: all ease .2s;
+      padding:0 2px;
+    }
+  }
+  @include when(checked) {
+    .w-switch-inner{
+      padding:2px 21px 2px 3px;
+      background:$--color-primary;
+      &:after{
+        left: 100%;
+        margin-left:-18px;
+      }
+    }
+  }
+  .w-switch-label{
+    padding-left:10px;
+    transition: all ease .2s;
+  }
+  .w-switch-input{
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+  }
+}

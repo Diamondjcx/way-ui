@@ -1,0 +1,12 @@
+@import 'mixins/mixin';
+@import "common/index";
+@include w(popover){
+  position: fixed;
+  z-index: 1000;
+  @include in(inner){
+    padding:16px;
+    background: $--color-white;
+    border-radius: 4px;
+    box-shadow: 0 0 6px $--color-black-light-9;
+  }
+}

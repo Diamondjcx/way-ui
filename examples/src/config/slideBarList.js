@@ -1,0 +1,31 @@
+export const sidenav = [
+  {
+    name:'基础组件',
+    list:[
+      {
+        name:'colors',
+        name_cn:'颜色'
+      },
+      {
+        name:'grid',
+        name_cn:'栅格'
+      },
+      {
+        name:'icon',
+        name_cn:'图标'
+      },
+      {
+        name:'button',
+        name_cn:'按钮'
+      },
+      {
+        name:'image',
+        name_cn:'图片'
+      },
+      {
+        name:'style',
+        name_cn:'内置样式'
+      }
+    ]
+  }
+]
