@@ -1,3 +1,8 @@
+
+const path = require('path')
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 module.exports = {
   // 项目部署的基础路径
   // 我们默认假设你的应用将会部署在域名的根部，
@@ -19,6 +24,15 @@ module.exports = {
       // 在 dist/index.html 的输出
       filename: 'index.html'
     }
+  },
+  chainWebpack: config => {
+    // 使用自定义 loader
+    config.module
+      .rule("md-loader")
+      .test(/\.md$/)
+      .use("md-loader")
+      .loader(resolve("./md-loader/index.js"))
+      .end();
   },
   css: {
     loaderOptions: {

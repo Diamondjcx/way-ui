@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const Button = () => import(/* webpackChunkName: 'button' */ '../page/button')
+const Button = () => import(/* webpackChunkName: 'button' */ '../docs/button.md')
 const Grid = () => import(/* webpackChunkName: 'Icon' */ '../page/grid')
 const Radio = () => import(/* webpackChunkName: 'radio' */ '../page/radio')
 const Checkbox = () => import(/* webpackChunkName: 'Checkbox' */ '../page/checkbox')
